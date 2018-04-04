@@ -6,6 +6,7 @@ Go package that converts XML to JSON
 ### Changes
 
 This version has removed prefixes in front of arguments and contents on decoding xmls.
+
 It also parses ints(64bit), floats(64 bit) and booleans. If the ints or floats has a leading 0, it is considered a string.
 
 
