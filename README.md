@@ -75,8 +75,8 @@ Feel free to contribute to this project if you want to fix/extend/improve it.
   - [samuelhug](https://github.com/samuelhug)
 
 ### TODO
-
-   * Extract data types in JSON (numbers, boolean, ...)
+   * ~~Remove prefixes~~
+   * ~~Extract data types in JSON (numbers, boolean, ...)~~
    * Categorise errors
    * Option to prettify the JSON output
    * Benchmark
