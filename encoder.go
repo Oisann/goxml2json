@@ -126,7 +126,7 @@ func sanitiseString(s string) string {
 
 	if _, err := strconv.ParseInt(s, 10, 64); err == nil && !(len(s) > 1 && string([]rune(s)[0]) == "0") {
 		buf.WriteString(s)
-	} else if _, err := strconv.ParseFloat(s, 64); err == nil {
+	} else if _, err := strconv.ParseFloat(s, 64); err == nil && !(len(s) > 1 && string([]rune(s)[0]) == "0") {
 		buf.WriteString(s)
 	} else if _, err := strconv.ParseBool(s); err == nil {
 		buf.WriteString(s)
