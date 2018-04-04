@@ -1,14 +1,14 @@
-# goxml2json [![CircleCI](https://circleci.com/gh/basgys/goxml2json.svg?style=svg)](https://circleci.com/gh/basgys/goxml2json)
+# goxml2json
 
 Go package that converts XML to JSON
 
 ### Install
 
-    go get -u github.com/basgys/goxml2json
+    go get -u github.com/oisann/goxml2json
 
 ### Importing
 
-    import github.com/basgys/goxml2json
+    import github.com/oisann/goxml2json
 
 ### Usage
 
@@ -21,7 +21,7 @@ Go package that converts XML to JSON
   	"fmt"
   	"strings"
 
-  	xj "github.com/basgys/goxml2json"
+  	xj "github.com/oisann/goxml2json"
   )
 
   func main() {
