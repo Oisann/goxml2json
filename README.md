@@ -53,6 +53,7 @@ It also parses ints(64bit), floats(64 bit) and booleans. If the ints or floats h
   <osm version="0.6" generator="CGImap 0.0.2">
    <bounds minlat="54.0889580" minlon="12.2487570" maxlat="54.0913900" maxlon="12.2524800"/>
    <foo>bar</foo>
+   <data type="04" value="4"/>
   </osm>
 ```
 
@@ -61,15 +62,19 @@ It also parses ints(64bit), floats(64 bit) and booleans. If the ints or floats h
 ```json
   {
     "osm": {
-      "-version": "0.6",
-      "-generator": "CGImap 0.0.2",
+      "version": "0.6",
+      "generator": "CGImap 0.0.2",
       "bounds": {
-        "-minlat": "54.0889580",
-        "-minlon": "12.2487570",
-        "-maxlat": "54.0913900",
-        "-maxlon": "12.2524800"
+        "minlat": 54.0889580,
+        "minlon": 12.2487570,
+        "maxlat": 54.0913900,
+        "maxlon": 12.2524800
       },
-      "foo": "bar"
+      "foo": "bar",
+      "data": {
+        "type": "04",
+        "value": 4
+      }
     }
   }
 ```
