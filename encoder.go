@@ -5,6 +5,7 @@ import (
 	"io"
 	"strconv"
 	"unicode/utf8"
+	"regexp"
 )
 
 // An Encoder writes JSON objects to an output stream.
@@ -121,12 +122,17 @@ func (enc *Encoder) write(s string) {
 // https://golang.org/src/encoding/json/encode.go?s=5584:5627#L788
 var hex = "0123456789abcdef"
 
+func isZeroLeadingString(s string) bool {
+	matched,_ := regexp.MatchString("^[0]+[^.]+[0-9]*", s)
+	return matched
+}
+
 func sanitiseString(s string) string {
 	var buf bytes.Buffer
 
-	if _, err := strconv.ParseInt(s, 10, 64); err == nil && !(len(s) > 1 && string([]rune(s)[0]) == "0") {
+	if _, err := strconv.ParseInt(s, 10, 64); err == nil && !isZeroLeadingString(s) {
 		buf.WriteString(s)
-	} else if _, err := strconv.ParseFloat(s, 64); err == nil && !(len(s) > 1 && string([]rune(s)[0]) == "0") {
+	} else if _, err := strconv.ParseFloat(s, 64); err == nil && !isZeroLeadingString(s) {
 		buf.WriteString(s)
 	} else if _, err := strconv.ParseBool(s); err == nil {
 		buf.WriteString(s)
